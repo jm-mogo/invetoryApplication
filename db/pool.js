@@ -6,7 +6,6 @@ const {
     DB_DATABASE,
     DB_PASSWORD,
 } = require("../config");
-require("dotenv").config();
 
 module.exports = new Pool({
     host: DB_HOST,
