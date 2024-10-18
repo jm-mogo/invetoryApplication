@@ -17,5 +17,5 @@ app.use("/addCategory", addCategoryRouter);
 app.use("/updateItem", updateItemRouter);
 
 app.listen(PORT, HOST, () => {
-    console.log(`App listening on ${PORT}`);
+    console.log(`App listening on ${HOST} ${PORT}`);
 });
