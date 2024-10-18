@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <%- include('./partials/nav') %>
+
+        <h1>
+            Welcome to the inventary
+        </h1>
+
+        <ul>
+            <% for (let i=0; i < items.length; i++) { %>
+                <li>
+                    <%= items[i].item_name + " $" + items[i].price%>
+                        <a
+                            href="<%= `/updateItem?item_id=${items[i].item_id}&item_name=${items[i].item_name}&price=${items[i].price}&category_id=${items[i].category_id}`  %>">update</a>
+                </li>
+                <% } %>
+        </ul>
+
+</body>
+
+</html>
