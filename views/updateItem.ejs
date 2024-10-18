@@ -8,32 +8,33 @@
 </head>
 
 <body>
-    <h1>Update item</h1>
-    <form action="/updateItem" method="POST">
-        <div>
-            <input type="hidden" name="item_id" value="<%= item_id %>">
-        </div>
-        <div>
-            <Label for="item_name">Name</Label>
-            <input type="text" id="item_name" name="item_name" value="<%= item_name %>" required>
-        </div>
-        <div>
-            <label for="price">Price</label>
-            <input type="number" name="price" id="price" value="<%= price %>" required>
-        </div>
-        <div>
-            <label for="category_id">Category </label>
-            <select name="category_id" id="category_id">
-                <% for (let i=0; i < categories.length; i++ ) { %>
-                    <option value="<%= categories[i].category_id %>" <%=categories[i].category_id==category_id
-                        ? "selected" : "" %>>
-                        <%= categories[i].category_name %>
-                    </option>
-                    <% } %>
-            </select>
-        </div>
-        <button>submit</button>
-    </form>
+    <%- include('./partials/nav') %>
+        <h1>Update item</h1>
+        <form action="/updateItem" method="POST">
+            <div>
+                <input type="hidden" name="item_id" value="<%= item_id %>">
+            </div>
+            <div>
+                <Label for="item_name">Name</Label>
+                <input type="text" id="item_name" name="item_name" value="<%= item_name %>" required>
+            </div>
+            <div>
+                <label for="price">Price</label>
+                <input type="number" name="price" id="price" value="<%= price %>" required>
+            </div>
+            <div>
+                <label for="category_id">Category </label>
+                <select name="category_id" id="category_id">
+                    <% for (let i=0; i < categories.length; i++ ) { %>
+                        <option value="<%= categories[i].category_id %>" <%=categories[i].category_id==category_id
+                            ? "selected" : "" %>>
+                            <%= categories[i].category_name %>
+                        </option>
+                        <% } %>
+                </select>
+            </div>
+            <button>submit</button>
+        </form>
 </body>
 
 </html>

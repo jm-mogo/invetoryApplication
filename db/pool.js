@@ -5,6 +5,7 @@ const {
     DB_PORT,
     DB_DATABASE,
     DB_PASSWORD,
+    DB_NAME,
 } = require("../config");
 
 module.exports = new Pool({

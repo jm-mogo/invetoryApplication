@@ -20,7 +20,7 @@
                 <li>
                     <%= items[i].item_name + " $" + items[i].price%>
                         <a
-                            href="<%= `/updateItem?item_id=${items[i].item_id}&item_name=${items[i].item_name}&price=${items[i].price}&category_id=${items[i].category_id}`  %>">update</a>
+                            href="<%= `/updateItem?item_id=${items[i].item_id}&item_name=${items[i].item_name}&price=${items[i].price}&category_id=${items[i].category_id}`  %>"><button>update</button></a>
                 </li>
                 <% } %>
         </ul>
