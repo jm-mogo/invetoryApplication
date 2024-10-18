@@ -4,6 +4,7 @@ const indexRouter = require("./routes/indexRouter");
 const addItemRouter = require("./routes/addItemRouter");
 const addCategoryRouter = require("./routes/addCategoryRouter");
 const updateItemRouter = require("./routes/updateItemRouter");
+const { PORT } = require("./config");
 
 const app = express();
 app.set("views", path.join(__dirname, "views"));
@@ -15,7 +16,6 @@ app.use("/addItem", addItemRouter);
 app.use("/addCategory", addCategoryRouter);
 app.use("/updateItem", updateItemRouter);
 
-const PORT = 8000;
 app.listen(PORT, () => {
     console.log(`App listening on ${PORT}`);
 });
