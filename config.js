@@ -1,4 +1,4 @@
-const PORT = process.env.PORT || 8010;
+const PORT = process.env.PORT || 8080;
 const HOST = process.env.HOST || "0.0.0.0";
 
 require("dotenv").config();
@@ -8,8 +8,7 @@ const DB_USER = process.env.DB_USER;
 const DB_DATABASE = process.env.DB_DATABASE;
 const DB_PASSWORD = process.env.DB_PASSWORD;
 const DB_PORT = process.env.DB_PORT;
-
-console.log(DB_DATABASE, DB_HOST, DB_PASSWORD, DB_PORT, DB_USER);
+const CONNECTION_STRING = process.env.CONNECTION_STRING;
 
 module.exports = {
     PORT,
@@ -19,4 +18,5 @@ module.exports = {
     DB_PORT,
     DB_DATABASE,
     HOST,
+    CONNECTION_STRING,
 };

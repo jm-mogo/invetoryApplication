@@ -6,12 +6,12 @@ const {
     DB_DATABASE,
     DB_PASSWORD,
     DB_NAME,
+    CONNECTION_STRING,
 } = require("../config");
 
+const connectionString = CONNECTION_STRING;
+
 module.exports = new Pool({
-    host: DB_HOST,
-    user: DB_USER,
-    database: DB_DATABASE,
-    password: DB_PASSWORD,
-    port: DB_PORT,
+    connectionString,
+    DB_PASSWORD,
 });
