@@ -24,7 +24,6 @@ addCategoryRouter.post("/delete", async (req, res) => {
     try {
         await deleteCategory(category_id);
     } catch {
-        console.log("error");
         message = true;
     }
     const category = await getCategories();

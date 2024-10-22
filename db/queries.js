@@ -2,7 +2,7 @@ const pool = require("./pool");
 
 async function getAllItems() {
     const { rows } = await pool.query(
-        "SELECT * FROM items INNER JOIN category ON items.category_id = category.category_id"
+        "SELECT * FROM items LEFT OUTER JOIN category ON items.category_id = category.category_id"
     );
     return rows;
 }
