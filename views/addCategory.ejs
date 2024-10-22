@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 
-<body>
+<%- include('./partials/head') %>
 
-    <%- include('./partials/nav') %>
+    <body>
 
-        <h1>Add a new Category</h1>
+        <%- include('./partials/nav') %>
 
-        <form action="/addCategory" method="POST">
-            <div>
-                <Label for="category_name">Name</Label>
-                <input type="text" id="category_name" name="category_name" required>
+            <div class="container">
+                <h1>New Category</h1>
+
+                <form action="/addCategory" method="POST">
+                    <div>
+                        <Label for="category_name">Name</Label>
+                        <input type="text" id="category_name" name="category_name" required>
+                    </div>
+                    <button class="submitBtn">ADD</button>
+                </form>
             </div>
-            <button>Submit</button>
-        </form>
-</body>
+
+    </body>
 
 </html>

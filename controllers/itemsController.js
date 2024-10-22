@@ -3,10 +3,16 @@ const {
     addNewItem,
     updateOneItem,
     deleteItemWithId,
+    getItemsByFilter,
 } = require("../db/queries");
 
 async function getItems() {
     const items = await getAllItems();
+    return items;
+}
+
+async function getItemsFilter({ category_id }) {
+    const items = await getItemsByFilter(category_id);
     return items;
 }
 
@@ -22,4 +28,4 @@ async function updateItem({ item_id, item_name, price, category_id }) {
     await updateOneItem(item_id, item_name, price, category_id);
 }
 
-module.exports = { getItems, addItem, updateItem, deleteItem };
+module.exports = { getItems, addItem, updateItem, deleteItem, getItemsFilter };

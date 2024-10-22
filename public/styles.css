@@ -1,0 +1,117 @@
+table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    max-width: 600px;
+    width: 90%;
+    margin: auto;
+}
+
+table  td, table  th {
+    border: 1px solid #ddd;
+    padding: 4px;
+}
+
+table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: white;
+}
+
+
+label {
+    font-size: 1.4rem;
+}
+
+fieldset,
+input,
+legend,
+select,
+textarea {
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+input,
+select {
+  border: 1px solid #616161;
+  background-color: white;
+  border-radius: 0.25rem;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  font: 1.25rem / 1.5 sans-serif;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+}
+
+select {
+    background: url("./down-arrow.svg") no-repeat center right 0.75rem;
+  }
+
+.container {
+    max-width: 400px;
+    width: 80%;
+    margin-top: 100px;
+    margin: auto;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  height: 1.5em;
+  width: 1.5em;
+  vertical-align: middle;
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+}
+
+input[type="radio"]:checked {
+    background-image: radial-gradient(
+      hsl(213, 73%, 50%) 40%,
+      transparent calc(40% + 1px)
+    );
+  }
+
+.inputDiv {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.doubleInput {
+    display: flex;
+    gap: 10px;
+}
+
+.submitBtn {
+    border: none;
+    font: 1.25rem sans-serif;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    padding: 0.75rem 1.25rem;
+    background-color: rgb(34, 118, 221);
+    color: white;
+    margin-top: 28px;
+    
+}
+
+/* #formNewItem {
+    
+} */

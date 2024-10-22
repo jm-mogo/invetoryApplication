@@ -1,40 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 
-<body>
+<%- include('./partials/head') %>
 
-    <%- include('./partials/nav') %>
+    <body>
 
-        <h1>Add a new Item</h1>
+        <%- include('./partials/nav') %>
 
-        <form action="/addItem" method="POST">
-            <div>
-                <Label for="item_name">Name</Label>
-                <input type="text" id="item_name" name="item_name" required>
+            <div class="container">
+                <h1>New Item</h1>
+
+                <form action="/addItem" method="POST" id="formNewItem">
+                    <div class="inputDiv">
+                        <Label for="item_name">Name</Label>
+                        <input type="text" id="item_name" name="item_name" required>
+                    </div>
+                    <div class="doubleInput">
+                        <div class="inputDiv">
+                            <label for="price">Price</label>
+                            <input type="number" name="price" id="price" required>
+                        </div>
+                        <div class="inputDiv">
+                            <label for="category_id">Category </label>
+                            <select name="category_id" id="category_id">
+                                <% for (let i=0; i < categories.length; i++ ) { %>
+                                    <option value="<%= categories[i].category_id %>">
+                                        <%= categories[i].category_name %>
+                                    </option>
+                                    <% } %>
+                            </select>
+                        </div>
+                    </div>
+
+
+                    <button class="submitBtn">ADD</button>
+                </form>
             </div>
-            <div>
-                <label for="price">Price</label>
-                <input type="number" name="price" id="price" required>
-            </div>
-            <div>
-                <label for="category_id">Category </label>
-                <select name="category_id" id="category_id">
-                    <% for (let i=0; i < categories.length; i++ ) { %>
-                        <option value="<%= categories[i].category_id %>">
-                            <%= categories[i].category_name %>
-                        </option>
-                        <% } %>
-                </select>
-            </div>
 
-            <button>Submit</button>
-        </form>
-</body>
+
+    </body>
 
 </html>

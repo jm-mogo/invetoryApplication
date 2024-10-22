@@ -1,34 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<%- include('./partials/head') %>
 
-<body>
+    <body>
 
-    <%- include('./partials/nav') %>
+        <%- include('./partials/nav') %>
 
-        <h1>
-            Welcome to the inventary
-        </h1>
+            <h1>
+                Welcome to the inventary
+            </h1>
 
-        <ul>
-            <% for (let i=0; i < items.length; i++) { %>
-                <li>
-                    <%= items[i].item_name + " $" + items[i].price%>
-                        <a
-                            href="<%= `/updateItem?item_id=${items[i].item_id}&item_name=${items[i].item_name}&price=${items[i].price}&category_id=${items[i].category_id}`  %>"><button>update</button></a>
-                        <form action="/" method="POST">
-                            <input type="hidden" name="item_id" value="<%= items[i].item_id %>">
-                            <button>delete</button>
-                        </form>
-                </li>
-                <% } %>
-        </ul>
+            <form id="filterForm" action="/" method="GET">
+                <h2>Filter category</h2>
+                <% for (let i=0; i < category.length; i++) { %>
+                    <div>
+                        <input type="radio" name="filter" id="<%= category[i].category_id %>"
+                            name="<%= category[i].category_id %>" value="<%= category[i].category_id %>">
+                        <label for="<%= category[i].category_id %>">
+                            <%= category[i].category_name %>
+                        </label>
+                    </div>
 
-</body>
+                    <% } %>
+                        <button>filter</button>
+            </form>
+
+            <table>
+
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Tools</th>
+                </tr>
+
+                <% for (let i=0; i < items.length; i++) { %>
+                    <tr>
+                        <td>
+                            <%= items[i].item_name%>
+                        </td>
+                        <td>
+                            <%= items[i].category_name%>
+                        </td>
+                        <td>
+                            $<%= items[i].price%>
+                        </td>
+
+                        <td>
+                            <a
+                                href="<%= `/updateItem?item_id=${items[i].item_id}&item_name=${items[i].item_name}&price=${items[i].price}&category_id=${items[i].category_id}`  %>"><button>update</button></a>
+                            <form action="/" method="POST" onsubmit="return confirm(`Do you really want to delete`)">
+                                <input type="hidden" name="item_id" value="<%= items[i].item_id %>">
+                                <button>delete</button>
+                            </form>
+                        </td>
+
+                    </tr>
+                    <% } %>
+
+            </table>
+
+
+
+    </body>
 
 </html>

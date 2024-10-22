@@ -1,7 +1,17 @@
 const pool = require("./pool");
 
 async function getAllItems() {
-    const { rows } = await pool.query("SELECT * FROM items");
+    const { rows } = await pool.query(
+        "SELECT * FROM items INNER JOIN category ON items.category_id = category.category_id"
+    );
+    return rows;
+}
+
+async function getItemsByFilter(category_id) {
+    const { rows } = await pool.query(
+        "SELECT * FROM items INNER JOIN category ON items.category_id = category.category_id WHERE items.category_id = $1",
+        [category_id]
+    );
     return rows;
 }
 
@@ -41,4 +51,5 @@ module.exports = {
     deleteItemWithId,
     addNewCategory,
     updateOneItem,
+    getItemsByFilter,
 };

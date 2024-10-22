@@ -1,4 +1,4 @@
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8800;
 const HOST = process.env.HOST || "0.0.0.0";
 
 require("dotenv").config();
