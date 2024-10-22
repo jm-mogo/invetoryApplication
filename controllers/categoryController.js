@@ -1,4 +1,8 @@
-const { getAllCategories, addNewCategory } = require("../db/queries");
+const {
+    getAllCategories,
+    addNewCategory,
+    deleteCategoryWithId,
+} = require("../db/queries");
 
 async function getCategories() {
     const categories = await getAllCategories();
@@ -9,4 +13,8 @@ async function addCategory(category_name) {
     await addNewCategory(category_name);
 }
 
-module.exports = { getCategories, addCategory };
+async function deleteCategory(category_id) {
+    await deleteCategoryWithId(category_id);
+}
+
+module.exports = { getCategories, addCategory, deleteCategory };

@@ -39,6 +39,12 @@ async function addNewCategory(category_name) {
     ]);
 }
 
+async function deleteCategoryWithId(category_id) {
+    await pool.query("DELETE FROM category WHERE category_id = $1", [
+        category_id,
+    ]);
+}
+
 async function getAllCategories() {
     const { rows } = await pool.query("SELECT * FROM category");
     return rows;
@@ -52,4 +58,5 @@ module.exports = {
     addNewCategory,
     updateOneItem,
     getItemsByFilter,
+    deleteCategoryWithId,
 };

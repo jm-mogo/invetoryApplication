@@ -6,6 +6,8 @@
 
     <body>
 
+
+
         <%- include('./partials/nav') %>
 
             <div class="container">
@@ -18,8 +20,39 @@
                     </div>
                     <button class="submitBtn">ADD</button>
                 </form>
+                <% if (message) { %>
+                    <h2>CANNOT DELETE CATEGORY THAT IS USE </h2>
+                    <% } %>
             </div>
 
+
+            <table>
+
+                <tr>
+                    <th>Name</th>
+                    <th>Tools</th>
+                </tr>
+
+                <% for (let i=0; i < category.length; i++) { %>
+                    <tr>
+                        <td>
+                            <%= category[i].category_name%>
+                        </td>
+
+
+                        <td>
+                            <form action="/addCategory/delete" method="POST"
+                                onsubmit="return confirm(`Do you really want to delete`)">
+                                <input type="hidden" name="category_id" value="<%= category[i].category_id %>">
+                                <button class="deleteBtn"></button>
+                            </form>
+
+                        </td>
+
+                    </tr>
+                    <% } %>
+
+            </table>
     </body>
 
 </html>
