@@ -1,5 +1,28 @@
-table {
+* {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.inputsFilter {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.inputsFilter div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.filterBtn {
+  padding: .45rem .85rem;
+  font-size: 1.2rem;
+
+}
+
+table {
+    font-size: 1.4rem;
     border-collapse: collapse;
     max-width: 600px;
     width: 90%;
@@ -8,7 +31,7 @@ table {
 
 table  td, table  th {
     border: 1px solid #ddd;
-    padding: 4px;
+    padding: 8px;
 }
 
 table tr:nth-child(even){
@@ -23,6 +46,29 @@ table th {
     background-color: #04AA6D;
     color: white;
 }
+
+.form-tools {
+  display: flex; 
+  justify-content: space-around;
+}
+
+.deleteBtn {
+  background: url(./delete.png) no-repeat;
+}
+
+.editBtn {
+  background: url(./pen.png) no-repeat;
+}
+
+.deleteBtn,
+.editBtn {
+  cursor: pointer;
+  border: none;
+  background-size: cover;
+  width: 24px;
+  height: 24px;
+}
+
 
 
 label {

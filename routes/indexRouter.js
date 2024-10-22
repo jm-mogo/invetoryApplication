@@ -9,12 +9,14 @@ const { getCategories } = require("../controllers/categoryController");
 const indexRouter = Router();
 
 indexRouter.get("/", async (req, res) => {
-    const items = req.query.filter
-        ? await getItemsFilter({ category_id: req.query.filter })
-        : await getItems();
+    const filter = req.query.filter;
+    const items =
+        filter && filter != "on"
+            ? await getItemsFilter({ category_id: req.query.filter })
+            : await getItems();
     const category = await getCategories();
 
-    res.render("index", { items, category });
+    res.render("index", { items, category, filter });
 });
 
 indexRouter.post("/", async (req, res) => {

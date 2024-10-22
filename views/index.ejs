@@ -13,17 +13,25 @@
 
             <form id="filterForm" action="/" method="GET">
                 <h2>Filter category</h2>
-                <% for (let i=0; i < category.length; i++) { %>
+                <div class="inputsFilter">
                     <div>
-                        <input type="radio" name="filter" id="<%= category[i].category_id %>"
-                            name="<%= category[i].category_id %>" value="<%= category[i].category_id %>">
-                        <label for="<%= category[i].category_id %>">
-                            <%= category[i].category_name %>
-                        </label>
+                        <input type="radio" name="filter" id="all" checked>
+                        <label for="all">All</label>
                     </div>
+                    <% for (let i=0; i < category.length; i++) { %>
+                        <div>
+                            <input type="radio" name="filter" id="<%= category[i].category_id %>"
+                                name="<%= category[i].category_id %>" value="<%= category[i].category_id %>"
+                                <%=filter==category[i].category_id ? "checked" : "" %>>
+                            <label for="<%= category[i].category_id %>">
+                                <%= category[i].category_name %>
+                            </label>
+                        </div>
 
-                    <% } %>
-                        <button>filter</button>
+                        <% } %>
+                </div>
+
+                <button class="filterBtn">filter</button>
             </form>
 
             <table>
@@ -47,12 +55,13 @@
                             $<%= items[i].price%>
                         </td>
 
-                        <td>
+                        <td class="form-tools">
                             <a
-                                href="<%= `/updateItem?item_id=${items[i].item_id}&item_name=${items[i].item_name}&price=${items[i].price}&category_id=${items[i].category_id}`  %>"><button>update</button></a>
+                                href="<%= `/updateItem?item_id=${items[i].item_id}&item_name=${items[i].item_name}&price=${items[i].price}&category_id=${items[i].category_id}`  %>"><button
+                                    class="editBtn"></button></a>
                             <form action="/" method="POST" onsubmit="return confirm(`Do you really want to delete`)">
                                 <input type="hidden" name="item_id" value="<%= items[i].item_id %>">
-                                <button>delete</button>
+                                <button class="deleteBtn"></button>
                             </form>
                         </td>
 
