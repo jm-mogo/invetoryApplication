@@ -55,14 +55,18 @@
                             $<%= items[i].price%>
                         </td>
 
-                        <td class="form-tools">
-                            <a
-                                href="<%= `/updateItem?item_id=${items[i].item_id}&item_name=${items[i].item_name}&price=${items[i].price}&category_id=${items[i].category_id}`  %>"><button
-                                    class="editBtn"></button></a>
-                            <form action="/" method="POST" onsubmit="return confirm(`Do you really want to delete`)">
-                                <input type="hidden" name="item_id" value="<%= items[i].item_id %>">
-                                <button class="deleteBtn"></button>
-                            </form>
+                        <td>
+                            <div class="form-tools">
+                                <a
+                                    href="<%= `/updateItem?item_id=${items[i].item_id}&item_name=${items[i].item_name}&price=${items[i].price}&category_id=${items[i].category_id}`  %>"><button
+                                        class="editBtn"></button></a>
+                                <form action="/" method="POST"
+                                    onsubmit="return confirm(`Do you really want to delete`)">
+                                    <input type="hidden" name="item_id" value="<%= items[i].item_id %>">
+                                    <button class="deleteBtn"></button>
+                                </form>
+                            </div>
+
                         </td>
 
                     </tr>

@@ -4,6 +4,7 @@
 
 .inputsFilter {
   display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   margin-bottom: 10px;
 }
@@ -50,6 +51,8 @@ table th {
 .form-tools {
   display: flex; 
   justify-content: space-around;
+  align-items: center;
+  height: 100%;
 }
 
 .deleteBtn {
