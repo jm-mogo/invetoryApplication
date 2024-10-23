@@ -203,6 +203,18 @@ input[type="radio"]:checked {
   color: red;
 }
 
-/* #formNewItem {
-    
-} */
+footer {
+  width: 100%;
+  background-color: #616161;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 12px;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
