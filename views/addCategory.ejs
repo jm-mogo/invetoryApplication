@@ -41,11 +41,17 @@
 
 
                         <td>
-                            <form action="/addCategory/delete" method="POST"
-                                onsubmit="return confirm(`Do you really want to delete`)">
-                                <input type="hidden" name="category_id" value="<%= category[i].category_id %>">
-                                <button class="deleteBtn"></button>
-                            </form>
+                            <div class="form-tools">
+                                <a href="
+                                    <%=`/updateCategory?category_id=${category[i].category_id}&category_name=${category[i].category_name}`
+                                    %>"><button class="editBtn"></button></a>
+                                <form action="/addCategory/delete" method="POST"
+                                    onsubmit="return confirm(`Do you really want to delete`)">
+                                    <input type="hidden" name="category_id" value="<%= category[i].category_id %>">
+                                    <button class="deleteBtn"></button>
+                                </form>
+                            </div>
+
 
                         </td>
 

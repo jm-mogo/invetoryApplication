@@ -39,6 +39,13 @@ async function addNewCategory(category_name) {
     ]);
 }
 
+async function updateOneCategory(category_id, category_name) {
+    await pool.query(
+        "UPDATE category SET category_name = $1 WHERE category_id = $2",
+        [category_name, category_id]
+    );
+}
+
 async function deleteCategoryWithId(category_id) {
     await pool.query("DELETE FROM category WHERE category_id = $1", [
         category_id,
@@ -59,4 +66,5 @@ module.exports = {
     updateOneItem,
     getItemsByFilter,
     deleteCategoryWithId,
+    updateOneCategory,
 };

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<%- include('./partials/head') %>
+
+    <body>
+        <%- include('./partials/nav') %>
+
+            <div class="container">
+                <h1>Update category</h1>
+                <form action="/updateCategory" method="POST">
+                    <div>
+                        <input type="hidden" name="category_id" value="<%= category_id %>">
+                    </div>
+
+                    <div>
+                        <Label for="category_name">Name</Label>
+                        <input type="text" id="category_name" name="category_name" value="<%= category_name %>"
+                            required>
+                    </div>
+
+                    <button class="submitBtn">Update</button>
+                </form>
+            </div>
+
+    </body>
+
+</html>
