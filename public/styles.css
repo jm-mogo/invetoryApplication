@@ -25,6 +25,19 @@ nav a {
   color: white;
 }
 
+.title {
+  text-align: center;
+  padding-top: 22px;
+}
+
+#filterForm {
+  max-width: 600px;
+  width: 90%;
+  margin: auto;
+  margin-top: 22px;
+  margin-bottom: 22px;
+}
+
 .inputsFilter {
   display: flex;
   flex-wrap: wrap;
@@ -40,9 +53,8 @@ nav a {
 }
 
 .filterBtn {
-  padding: .45rem .85rem;
+  padding: .25rem .95rem;
   font-size: 1.2rem;
-
 }
 
 table {
@@ -51,6 +63,7 @@ table {
     max-width: 600px;
     width: 90%;
     margin: auto;
+    margin-bottom: 40px;
 }
 
 table  td, table  th {
@@ -184,6 +197,10 @@ input[type="radio"]:checked {
     color: white;
     margin-top: 28px;
     
+}
+
+.errorMessage {
+  color: red;
 }
 
 /* #formNewItem {
